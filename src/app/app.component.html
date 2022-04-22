@@ -1,4 +1,32 @@
 <hello name="{{ name }}"></hello>
-<p>
+
+- Class Binding - Style Binding
+<button (click)="isDanger = !isDanger">Toggle Danger</button>
+<br />
+<button (click)="isWarning = !isWarning">Toggle Warning</button>
+
+<div
+  class="box"
+  [class.red-border]="isDanger"
+  [class.yellow-background]="isWarning"
+></div>
+
+<!--
+  - [class.ten-class]
+  - [class] = "array"
+  - [class] = "object" {[ten-class: string]: boolean}
+
+-->
+
+<div
+  class="box"
+  [class]="{ 'red-border': isDanger, 'yellow-background': isWarning }"
+></div>
+
+<p
+  [style.color]="'red'"
+  [style.backgroundColor]="'yellow'"
+  [style.font-size.px]="10"
+>
   Start editing to see some magic happen :)
 </p>
